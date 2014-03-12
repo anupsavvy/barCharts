@@ -52,7 +52,6 @@
 		</div>
 	    </div>
 		<script type="text/javascript">
-		//document.getElementById("#mbars").innerHTML = "";
 		var w = 700;                        //width
 		var h = 700;                        //height
 		var padding = {top: 40, right: 40, bottom: 40, left:40};
@@ -62,14 +61,10 @@
 		//mperday.style.visibility = "hidden";
 		d3.json("data/mperday.json",function(json){
 			dataset = json;
-			//self.date.removeAll();
 			
 			//Data, stacked
 			stack(dataset);
 			
-			//for (var i = 0; i < dataset[0].length; i++){
-			//	self.date.push(dataset[0][i].time);
-			//}
 			var color_hash = {
 				    0 : ["Invite","#1f77b4"],
 					1 : ["Accept","#2ca02c"],
@@ -92,7 +87,6 @@
 					})
 				])
 				.range([h-padding.bottom-padding.top,0]);
-				//.range([0,h-padding.bottom-padding.top]);
 
 			var xAxis = d3.svg.axis()
 						   .scale(xScale)
@@ -219,7 +213,6 @@
 			//On click, update with new data			
 			d3.selectAll(".m")
 				.on("click", function() {
-					//mperday.style.visibility = "visible";
 					var date = this.getAttribute("value");
 				
 					var str;
